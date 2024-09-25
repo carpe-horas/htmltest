@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Journey</title>
+    <style>
+        /* 전체 페이지 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-image: url('https://images.unsplash.com/photo-1723584571014-fca5dce71413?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fCVFQyVCOSVCNCVFQiVBNSVCNCVFRCU4MyU4MCVFRCU5NyVBNCVFQiU4MiU5OHxlbnwwfHwwfHx8MA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 네비게이션 바 스타일 */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* 메인 콘텐츠 섹션 스타일 */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 950px;
+        }
+
+        /* 프로젝트 섹션 스타일 */
+        #projects h2 {
+            margin-bottom: 20px;
+        }
+
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .project-item img {
+            width: 30%;
+            border-radius: 8px;
+            cursor: pointer; /* 클릭 가능한 이미지 */
+        }
+
+        .project-item div {
+            width: 65%;
+        }
+
+        /* 모달 창 스타일 */
+        .modal {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            z-index: 100;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+        }
+
+        /* 모달 닫기 버튼 */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* 모달 이미지 반응형 */
+        @media (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <h1>Welcome to My Travel Journey</h1>
+    </header>
+
+    <!-- 네비게이션 바 -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Travel Stories</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- 소개 섹션 -->
+    <section id="about">
+        <h2>About My Journey</h2>
+        <p> 세상을 경험하는 것이 최고의 배움이라 믿습니다. 낯선 길에서 만나는 사람들과 장소들이 저를 더 넓게, 깊게 만들어 줍니다. </p>
+    </section>
+
+    <!-- 프로젝트 섹션 (여행 이야기) -->
+    <section id="projects">
+        <h2>Travel Stories</h2>
+        <div class="project-item">
+            <img src="https://images.unsplash.com/photo-1601325382888-155b67b7b82f?w=400&auto=format&fit=crop&q=60" alt="Project 1" class="project-img">
+            <div>
+                <h3>거리의 예술, 벽화</h3>
+                <p>콜롬비아의 거리 곳곳에 숨겨진 화려한 벽화들, 그 속에 담긴 이야기가 나에게 말을 건다.</p>
+            </div>
+        </div>
+        <div class="project-item">
+            <img src="https://images.unsplash.com/photo-1534586171786-479ba91943f5?w=400&auto=format&fit=crop&q=60" alt="Project 2" class="project-img">
+            <div>
+                <h3>전통의 삶, 그리고 문화</h3>
+                <p>전통의상을 입고 정성껏 물건을 판매하는 현지인, 그 손길 속에서 느껴지는 콜롬비아의 따뜻함.</p>
+            </div>
+        </div>
+        <div class="project-item">
+            <img src="https://plus.unsplash.com/premium_photo-1671620314208-eb9ad97f70d2?w=400&auto=format&fit=crop&q=60" alt="Project 3" class="project-img">
+            <div>
+                <h3>도시의 일상, 그리고 그 속의 특별함</h3>
+                <p>바쁜 도시 속에서도, 콜롬비아의 고유한 매력이 곳곳에 숨겨져 있다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 모달 창 구조 -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>이메일은 공개하지 않지만, 저의 여행 이야기에 대해 더 궁금한 점이 있다면 아래 링크로 메시지를 보내 주세요.</p>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 My Travel Journey. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 모달 관련 자바스크립트 코드
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("imgModal");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // 프로젝트 이미지를 클릭하면 모달 창이 열리고 해당 이미지가 크게 표시됨
+        document.querySelectorAll('.project-img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // 모달 닫기 버튼 클릭 시 모달 창 닫기
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // 모달 창 바깥을 클릭하면 창 닫기
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+</html>
